@@ -2,6 +2,7 @@
 
 [![Badge em Desenvolvimento](https://img.shields.io/badge/status-em%20desenvolvimento-yellow)](https://github.com/gildembergleite/blog-frontend-nextjs-tailwind)
 [![Badge NextJS](https://img.shields.io/badge/NextJS-14-black)](https://github.com/vercel/next.js/)
+[![Badge shadcn/ui](https://img.shields.io/badge/shadcn-0.4.1-black)](https://github.com/shadcn-ui/ui)
 [![Badge TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.3.0-blue)](https://github.com/tailwindlabs/tailwindcss)
 [![Badge Strapi](https://img.shields.io/badge/Strapi-4.15.5-purple)](https://github.com/strapi/strapi)
 [![Badge MIT License](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/licenses/MIT)
@@ -12,7 +13,7 @@ O THE BLOG é um projeto de blog desenvolvido utilizando NextJS e TailwindCSS pa
 
 ![Captura de Tela](public/prints/print1.png)
 
-## Tecnologias Utilizadas
+## Principais Tecnologias Utilizadas
 
 - NextJS 14
 - TypeScript
