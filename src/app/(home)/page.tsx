@@ -1,11 +1,13 @@
 import PostCard from '@/components/PostCard'
 import { fetchData } from '@/lib/utils/fetch-data'
-import { Post } from '@/@types/post'
+import { ResponseData } from '@/@types/response-date'
 
 export default async function Home() {
-  const response = await fetchData('http://localhost:1337/api/posts/?populate=*')
-  const posts: Post[] = response.data
-  
+  const response = await fetchData(
+    `${process.env.NEXT_PUBLIC_API_URL}/posts/?populate=*`
+  )
+  const posts: ResponseData[] = response.data
+
   return (
     <main className='flex flex-col w-full justify-center items-center'>
       <div className='w-full max-w-7xl px-12 pt-6'>
