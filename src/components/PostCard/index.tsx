@@ -21,7 +21,7 @@ export default function PostCard(props: PostCardProps) {
   return (
     <Card className='h-full rounded-none'>
       <CardHeader>
-        <Link href="#" className='w-full h-full max-h-40 max-w-sm overflow-hidden'>
+        <Link href={`/post/${slugify(title, { strict: true, lower: true })}`} className='w-full h-full max-h-40 max-w-sm overflow-hidden'>
           <Image
             className='w-full h-full'
             width={0}
@@ -41,7 +41,9 @@ export default function PostCard(props: PostCardProps) {
           <p>{formatDate(date)}</p>
         </div>
         <CardTitle className='py-3'>
-          <Link href="#">{title}</Link>
+          <Link href={`/post/${slugify(title, { strict: true, lower: true })}`}>
+            {title}
+          </Link>
         </CardTitle>
         <CardDescription>
           {description.slice(0, 80)+'...'}
