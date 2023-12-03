@@ -8,30 +8,32 @@ import slugify from 'slugify'
 
 export default function PostDetailsPageClient(post: PopulatePost) {
   return (
-    <div className='flex w-full max-w-7xl py-6 px-12 gap-12'>
-      <aside className='w-full max-w-xs space-y-6'>
+    <div className='flex flex-col-reverse lg:flex-row w-full max-w-7xl py-6 px-12 gap-12'>
+      <aside className='w-full lg:max-w-xs space-y-6'>
         <h3 className='text-xl font-bold'>
           Recents blog posts
         </h3>
-        <div>
-          <PostCard
-            cover={post.cover_url}
-            title={post.title}
-            date={new Date(post.date)}
-            author={post.author}
-            description={post.content}
-            tags={post.tags.map((tag) => tag.name)}
-          />
-        </div>
-        <div>
-          <PostCard
-            cover={post.cover_url}
-            title={post.title}
-            date={new Date(post.date)}
-            author={post.author}
-            description={post.content}
-            tags={post.tags.map((tag) => tag.name)}
-          />
+        <div className='flex flex-col w-full items-center justify-center gap-6 md:grid md:grid-cols-2 lg:grid-cols-1'>
+          <div className='w-full max-w-xs md:max-w-none'>
+            <PostCard
+              cover={post.cover_url}
+              title={post.title}
+              date={new Date(post.date)}
+              author={post.author}
+              description={post.content}
+              tags={post.tags.map((tag) => tag.name)}
+            />
+          </div>
+          <div className='w-full max-w-xs md:max-w-none'>
+            <PostCard
+              cover={post.cover_url}
+              title={post.title}
+              date={new Date(post.date)}
+              author={post.author}
+              description={post.content}
+              tags={post.tags.map((tag) => tag.name)}
+            />
+          </div>
         </div>
       </aside>
       <main className='w-full'>
