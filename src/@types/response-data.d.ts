@@ -2,7 +2,12 @@ import { Post } from './post'
 import { Author } from './author'
 import { Tag } from './tag'
 
-interface ResponseAttributes extends Post {
+export interface TagData {
+  id: number;
+  attributes: Tag
+}
+
+export interface ResponseAttributes extends Post {
   author: {
     data: {
       id: number;
@@ -10,7 +15,7 @@ interface ResponseAttributes extends Post {
     }
   }
   tags: {
-    data: Tag[]
+    data: TagData[]
   }
 }
 

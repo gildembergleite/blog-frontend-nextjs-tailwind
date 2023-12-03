@@ -7,5 +7,4 @@ export interface Post {
   updatedAt: string
   cover_url: string
   content: string
-
 }

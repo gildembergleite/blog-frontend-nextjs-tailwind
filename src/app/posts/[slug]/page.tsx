@@ -8,20 +8,11 @@ interface PostsByAuthorPageProps {
 }
 
 export default async function PostsByAuthorPage({ params }: PostsByAuthorPageProps) {
-  const posts = await fetchData(`
-    ${process.env.NEXT_PUBLIC_API_URL}/posts/author/${params.slug}
+  const data = await fetchData(`
+    ${process.env.NEXT_PUBLIC_API_URL}/posts/author/${params.slug}/?populate=*
   `)
-  
-  const author = await fetchData(
-    `${process.env.NEXT_PUBLIC_API_URL}/authors/name/${params.slug}`
-  )
-
-  const tags = await fetchData(
-    `${process.env.NEXT_PUBLIC_API_URL}/tags/name/${params.slug}`
-  )
-
-  console.log(posts)
+  console.log(data)
   return (
-    <PostsByAuthorPageClient posts={posts} author={author[0]} />
+    <PostsByAuthorPageClient populatePosts={data} />
   )
 }

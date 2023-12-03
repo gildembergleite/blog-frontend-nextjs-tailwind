@@ -1,13 +1,13 @@
 import PostCard from '@/components/PostCard'
 import { fetchData } from '@/lib/utils/fetch-data'
-import { ResponseData } from '@/@types/response-date'
+import { ResponseData } from '@/@types/response-data'
 
 export default async function Home() {
   const response = await fetchData(
     `${process.env.NEXT_PUBLIC_API_URL}/posts/?populate=*`
   )
   const posts: ResponseData[] = response.data
-
+  console.log(posts[0].attributes.tags.data)
   return (
     <main className='flex flex-col w-full justify-center items-center'>
       <div className='w-full max-w-7xl px-12 pt-6'>
@@ -23,7 +23,7 @@ export default async function Home() {
             date={new Date(post.attributes.date)}
             title={post.attributes.title}
             description={post.attributes.content}
-            tags={post.attributes.tags.data}
+            tags={post.attributes.tags.data.map((tag) => tag.attributes.name)}
           />
         ))}
       </div>
