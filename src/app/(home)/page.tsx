@@ -12,7 +12,7 @@ export default async function Home() {
   return (
     <main className='flex flex-col w-full justify-center items-center'>
       <MainTitle title='All posts' />
-      <div className='px-12 py-6 w-full justify-center items-center max-w-7xl grid grid-cols-3 gap-6'>
+      <div className='px-12 py-6 w-full justify-center items-center max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {posts.map((post) => (
           <PostCard key={post.id}
             cover={post.attributes.cover_url}
