@@ -1,5 +1,6 @@
 import { Author } from '@/@types/author'
 import { fetchData } from '@/lib/utils/fetch-data'
+import AuthorPageClient from './page.client'
 
 interface PostsByAuthorPageProps {
   params: {
@@ -12,8 +13,6 @@ export default async function AuthorPage({ params }: PostsByAuthorPageProps) {
   const author: Author = data[0]
   
   return (
-    <div>      
-      {author.name}
-    </div>
+    <AuthorPageClient {...author} />
   )
 }
