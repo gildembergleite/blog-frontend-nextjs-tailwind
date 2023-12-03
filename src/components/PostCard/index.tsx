@@ -4,6 +4,7 @@ import { Badge } from '../ui/badge'
 import Link from 'next/link'
 import { formatDate } from '@/lib/utils/format-date'
 import { Author } from '@/@types/author'
+import slugify from 'slugify'
 
 interface PostCardProps {
   cover: string
@@ -48,7 +49,7 @@ export default function PostCard(props: PostCardProps) {
       </CardContent>
       <CardFooter className='flex gap-2 flex-wrap'>
         {tags.map((tag) => (
-          <Link key={tag} href="#">
+          <Link key={tag} href={`/tags/${slugify(tag, { strict: true, lower: true })}`}>
             <Badge className='inline-block'>
               {tag}
             </Badge>
