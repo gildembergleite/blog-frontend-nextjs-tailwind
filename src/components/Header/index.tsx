@@ -1,7 +1,5 @@
-'use client'
-
-import { Separator } from '@radix-ui/react-separator'
 import Link from 'next/link'
+import Logo from './logo'
 
 export default function Header() {
   return (
@@ -14,11 +12,7 @@ export default function Header() {
             <li><Link href="#">Contact</Link></li>
           </ul>
         </nav>
-        <Separator className='bg-input w-full h-0.5' />
-        <h1 className="font-bold text-[12rem] inline-block leading-none">
-          THE BLOG
-        </h1>
-        <Separator className='bg-input w-full h-0.5' />
+        <Logo />
       </div>
     </header>
   )

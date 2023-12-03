@@ -1,9 +1,22 @@
-export type Post = {
+import { Author } from './author'
+import { Tag } from './tag'
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+export interface Post {
   id: number
-  author: string
-  cover: string
-  createAt: string
-  title: string
-  description: string
-  tags: string[]
+  attributes: {
+    title: string
+    slug: string
+    date: string
+    createdAt: string
+    updatedAt: string
+    cover_url: string
+    content: string
+    author: {
+      data: Author
+    }
+    tags: {
+      data: Tag[]
+    }
+  }
 }

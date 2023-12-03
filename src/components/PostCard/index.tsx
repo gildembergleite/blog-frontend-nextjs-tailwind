@@ -3,19 +3,21 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from '../ui/badge'
 import Link from 'next/link'
 import { formatDate } from '@/lib/utils/format-date'
+import { Tag } from '@/@types/tag'
 
 interface PostCardProps {
   cover: string
-  author: string
+  author?: string
   date: Date
   title: string
   description: string
-  tags: string[]
+  tags: Tag[]
 }
 
 export default function PostCard(props: PostCardProps) {
   const { cover, author, date, title, description, tags } = props
-  
+  const tagArray = tags.map((tag) => tag.attributes.name)
+  console.log(description)
   return (
     <Card className='h-full rounded-none'>
       <CardHeader>
@@ -42,11 +44,11 @@ export default function PostCard(props: PostCardProps) {
           <Link href="#">{title}</Link>
         </CardTitle>
         <CardDescription>
-          {description.slice(0, 120) + '...'}
+          {description.slice(0, 80)+'...'}
         </CardDescription>
       </CardContent>
       <CardFooter className='flex gap-2 flex-wrap'>
-        {tags.map((tag) => (
+        {tagArray.map((tag) => (
           <Link key={tag} href="#">
             <Badge className='inline-block'>
               {tag}
