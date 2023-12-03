@@ -3,7 +3,8 @@ import { fetchData } from '@/lib/utils/fetch-data'
 import { Post } from '@/@types/post'
 
 export default async function Home() {
-  const posts: Post[] = await fetchData('http://localhost:1337/api/posts/?populate=*')
+  const response = await fetchData('http://localhost:1337/api/posts/?populate=*')
+  const posts: Post[] = response.data
   
   return (
     <main className='flex flex-col w-full justify-center items-center'>

@@ -5,8 +5,7 @@ export async function fetchData(url: string) {
       throw new Error('Erro ao buscar os dados')
     }
     const res = await response.json()
-    console.log(res)
-    return res.data
+    return res
   } catch (error) {
     console.error('Ocorreu um erro:', error)
     return []
