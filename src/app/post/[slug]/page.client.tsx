@@ -8,7 +8,7 @@ import slugify from 'slugify'
 
 export default function PostDetailsPageClient(post: PopulatePost) {
   return (
-    <div className='flex flex-col-reverse lg:flex-row w-full max-w-7xl py-6 px-12 gap-12'>
+    <div className='flex flex-col-reverse lg:flex-row w-full max-w-7xl py-6 md:px-12 px-6 gap-12'>
       <aside className='w-full lg:max-w-xs space-y-6'>
         <h3 className='text-xl font-bold'>
           Recents blog posts

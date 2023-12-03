@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export default function AuthorPageClient(author: Author) {
   return (
-    <div className='w-full max-w-7xl px-12 py-6'>
+    <div className='w-full max-w-7xl md:px-12 px-6 py-6'>
       <Card>
         <CardHeader>
           <CardTitle>{author.name}</CardTitle>
