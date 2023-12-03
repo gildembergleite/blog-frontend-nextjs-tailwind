@@ -4,10 +4,11 @@ import { Badge } from '../ui/badge'
 import Link from 'next/link'
 import { formatDate } from '@/lib/utils/format-date'
 import { Tag } from '@/@types/tag'
+import { Author } from '@/@types/author'
 
 interface PostCardProps {
   cover: string
-  author?: string
+  author: Author
   date: Date
   title: string
   description: string
@@ -34,8 +35,8 @@ export default function PostCard(props: PostCardProps) {
       </CardHeader>
       <CardContent>
         <div className='flex gap-2 items-center text-primary/60 text-sm'>
-          <Link href="#" className='hover:underline'>
-            {author}
+          <Link href={`/author/${author.slug}`} className='hover:underline'>
+            {author.name}
           </Link>
           <div className='rounded-full h-1.5 w-1.5 bg-primary/60'></div>
           <p>{formatDate(date)}</p>

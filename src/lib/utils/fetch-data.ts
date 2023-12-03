@@ -4,8 +4,9 @@ export async function fetchData(url: string) {
     if (!response.ok) {
       throw new Error('Erro ao buscar os dados')
     }
-    const posts = await response.json()
-    return posts.data
+    const res = await response.json()
+    console.log(res)
+    return res.data
   } catch (error) {
     console.error('Ocorreu um erro:', error)
     return []

@@ -1,5 +1,5 @@
 import PostCard from '@/components/PostCard'
-import { fetchData } from '@/lib/utils/fetch-posts'
+import { fetchData } from '@/lib/utils/fetch-data'
 import { Post } from '@/@types/post'
 
 export default async function Home() {
@@ -16,7 +16,7 @@ export default async function Home() {
         {posts.map((post) => (
           <PostCard key={post.id}
             cover={post.attributes.cover_url}
-            author={post.attributes.author.data.attributes.name}
+            author={post.attributes.author.data.attributes}
             date={new Date(post.attributes.date)}
             title={post.attributes.title}
             description={post.attributes.content}

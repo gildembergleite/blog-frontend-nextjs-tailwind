@@ -13,7 +13,10 @@ export interface Post {
     cover_url: string
     content: string
     author: {
-      data: Author
+      data: {
+        id: number;
+        attributes: Author
+      }
     }
     tags: {
       data: Tag[]
